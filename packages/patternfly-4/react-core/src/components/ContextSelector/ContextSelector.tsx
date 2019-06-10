@@ -67,7 +67,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps> {
 
   onEnterPressed = (event: any) => {
     if (event.charCode === KEY_CODES.ENTER) {
-      this.props.onSearchButtonClick(null);
+      this.props.onSearchButtonClick();
     }
   };
 
