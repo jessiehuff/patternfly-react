@@ -9,7 +9,8 @@ export enum ButtonVariant {
   tertiary = 'tertiary',
   danger = 'danger',
   link = 'link',
-  plain = 'plain'
+  plain = 'plain',
+  control = 'control'
 }
 
 export enum ButtonType {
