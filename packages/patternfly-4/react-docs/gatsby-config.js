@@ -27,6 +27,7 @@ module.exports = {
         },
         topNavItems: [
           { text: 'Icons', path: '/icons' },
+          { text: 'Accessibility status', path: '/a11y-status' },
         ],
       }
     },
