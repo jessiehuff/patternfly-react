@@ -848,24 +848,28 @@ class SelectableDataList extends React.Component {
     this.state = { 
       isOpen1: false,
       isOpen2: false,
-      selectedDataListItemId: ''
+      selectedDataListItemId: null
     };
 
-    this.onToggle1 = isOpen1  => {
+    this.onToggle1 = (isOpen1, event)  => {
+      event.stopPropagation()
       this.setState({ isOpen1 });
     };
     
-    this.onToggle2 = isOpen2  => {
+    this.onToggle2 = (isOpen2, event)  => {
+      event.stopPropagation()
       this.setState({ isOpen2 });
     };
 
     this.onSelect1 = event => {
+      event.stopPropagation()
       this.setState(prevState => ({
         isOpen1: !prevState.isOpen1
       }));
     };
     
     this.onSelect2 = event => {
+      event.stopPropagation()
       this.setState(prevState => ({
         isOpen2: !prevState.isOpen2
       }));
