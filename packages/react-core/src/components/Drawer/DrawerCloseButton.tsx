@@ -3,6 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
 import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
+import { DrawerContext } from './Drawer';
 
 export interface DrawerCloseButtonProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the drawer close button outer <div>. */
@@ -20,9 +21,13 @@ export const DrawerCloseButton: React.SFC<DrawerCloseButtonProps> = ({
   'aria-label': ariaLabel = 'Close drawer panel',
   ...props
 }: DrawerCloseButtonProps) => (
-  <div className={css(styles.drawerClose, className)} {...props}>
-    <Button variant="plain" onClick={onClose} aria-label={ariaLabel}>
+  <DrawerContext.Consumer>
+  {({ isExpanded }) => (
+    <div className={css(styles.drawerClose, className)} {...props}>
+    <Button variant="plain" onClick={onClose} aria-label={ariaLabel} tabIndex={isExpanded? 0 : -1}>
       <TimesIcon />
     </Button>
   </div>
+  )}
+  </DrawerContext.Consumer>
 );
