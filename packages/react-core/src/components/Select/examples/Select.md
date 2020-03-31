@@ -87,7 +87,7 @@ class SingleSelectInput extends React.Component {
 
   render() {
     const { isExpanded, selected, isDisabled, direction, isToggleIcon } = this.state;
-    const titleId = 'title-id';
+    const titleId = 'title-id-1';
     return (
       <div>
         <span id={titleId} hidden>
@@ -268,7 +268,7 @@ class CheckboxSelectInput extends React.Component {
 
   render() {
     const { isExpanded, selected } = this.state;
-    const titleId = 'checkbox-select-id';
+    const titleId = 'checkbox-select-id-1';
     return (
       <div>
         <span id={titleId} hidden>
@@ -342,7 +342,7 @@ class CheckboxSelectInputNoBadge extends React.Component {
 
   render() {
     const { isExpanded, selected } = this.state;
-    const titleId = 'checkbox-select-id';
+    const titleId = 'checkbox-select-id-2';
     return (
       <div>
         <span id={titleId} hidden>
@@ -424,7 +424,7 @@ class GroupedCheckboxSelectInput extends React.Component {
 
   render() {
     const { isExpanded, selected } = this.state;
-    const titleId = 'grouped-checkbox-select-id';
+    const titleId = 'grouped-checkbox-select-id-1';
     return (
       <div>
         <span id={titleId} hidden>
@@ -627,7 +627,7 @@ class TypeaheadSelectInput extends React.Component {
 
   render() {
     const { isExpanded, selected, isDisabled, isCreatable, hasOnCreateOption, options } = this.state;
-    const titleId = 'typeahead-select-id';
+    const titleId = 'typeahead-select-id-1';
     return (
       <div>
         <span id={titleId} hidden>
@@ -743,7 +743,7 @@ class TypeaheadSelectInput extends React.Component {
 
   render() {
     const { isExpanded, selected, options } = this.state;
-    const titleId = 'typeahead-select-id';
+    const titleId = 'typeahead-select-id-2';
     return (
       <div>
         <span id={titleId} hidden>
@@ -841,7 +841,7 @@ class MultiTypeaheadSelectInput extends React.Component {
 
   render() {
     const { isExpanded, selected, isCreatable, hasOnCreateOption } = this.state;
-    const titleId = 'multi-typeahead-select-id';
+    const titleId = 'multi-typeahead-select-id-1';
 
     return (
       <div>
@@ -963,7 +963,7 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
 
   render() {
     const { isExpanded, selected } = this.state;
-    const titleId = 'multi-typeahead-select-id';
+    const titleId = 'multi-typeahead-select-id-2';
 
     return (
       <div>
@@ -1113,7 +1113,7 @@ class SingleSelectInput extends React.Component {
 
   render() {
     const { isExpanded, selected, isDisabled, direction } = this.state;
-    const titleId = 'title-id';
+    const titleId = 'title-id-2';
     return (
       <div>
         <span id={titleId} hidden>
