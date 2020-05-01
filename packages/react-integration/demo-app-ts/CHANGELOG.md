@@ -3,6 +3,116 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.31.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.30.15...demo-app-ts@3.31.0) (2020-05-01)
+
+
+### Features
+
+* **NotificationDrawer:** Add new Notification Drawer Component ([#4137](https://github.com/patternfly/patternfly-react/issues/4137)) ([afbf832](https://github.com/patternfly/patternfly-react/commit/afbf832ab6394faa40b38a17817e95f67a37d61c)), closes [#1939](https://github.com/patternfly/patternfly-react/issues/1939)
+
+
+
+
+
+## [3.30.15](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.30.14...demo-app-ts@3.30.15) (2020-04-30)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.30.14](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.30.13...demo-app-ts@3.30.14) (2020-04-27)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.30.13](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.30.12...demo-app-ts@3.30.13) (2020-04-20)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.30.12](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.30.11...demo-app-ts@3.30.12) (2020-04-20)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.30.11](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.30.10...demo-app-ts@3.30.11) (2020-04-17)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.30.10](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.30.9...demo-app-ts@3.30.10) (2020-04-17)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.30.9](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.30.8...demo-app-ts@3.30.9) (2020-04-16)
+
+
+### Bug Fixes
+
+* **DataToolbarFilter:** Add prop to enable removal of all chips in a filter category. ([#4060](https://github.com/patternfly/patternfly-react/issues/4060)) ([16340da](https://github.com/patternfly/patternfly-react/commit/16340dad7dc37d4a9446717adc7fc252469e3cd4)), closes [#4059](https://github.com/patternfly/patternfly-react/issues/4059)
+
+
+
+
+
+## [3.30.8](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.30.7...demo-app-ts@3.30.8) (2020-04-14)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.30.7](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.30.6...demo-app-ts@3.30.7) (2020-04-13)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.30.6](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.30.5...demo-app-ts@3.30.6) (2020-04-09)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.30.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.30.4...demo-app-ts@3.30.5) (2020-04-08)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.30.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.30.3...demo-app-ts@3.30.4) (2020-04-07)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 ## [3.30.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.30.2...demo-app-ts@3.30.3) (2020-04-01)
 
 **Note:** Version bump only for package demo-app-ts

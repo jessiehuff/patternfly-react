@@ -3,6 +3,143 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.154.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.15...@patternfly/react-core@3.154.0) (2020-05-01)
+
+
+### Features
+
+* **NotificationDrawer:** Add new Notification Drawer Component ([#4137](https://github.com/patternfly/patternfly-react/issues/4137)) ([afbf832](https://github.com/patternfly/patternfly-react/commit/afbf832ab6394faa40b38a17817e95f67a37d61c)), closes [#1939](https://github.com/patternfly/patternfly-react/issues/1939)
+
+
+
+
+
+## [3.153.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.14...@patternfly/react-core@3.153.15) (2020-04-30)
+
+
+### Bug Fixes
+
+* **fillTemplate:** ie11 compatibility ([#4155](https://github.com/patternfly/patternfly-react/issues/4155)) ([1900655](https://github.com/patternfly/patternfly-react/commit/1900655a54680a9cdd13a90db02b6005e1851e05))
+
+
+
+
+
+## [3.153.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.13...@patternfly/react-core@3.153.14) (2020-04-27)
+
+
+### Bug Fixes
+
+* **select:** add missing import to docs ([#4109](https://github.com/patternfly/patternfly-react/issues/4109)) ([c51d22a](https://github.com/patternfly/patternfly-react/commit/c51d22a18cabfbc775dbeaa15cbbf57b28966865))
+
+
+
+
+
+## [3.153.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.12...@patternfly/react-core@3.153.13) (2020-04-20)
+
+
+### Bug Fixes
+
+* **DataToolbar:** max depth fix ([#4103](https://github.com/patternfly/patternfly-react/issues/4103)) ([e561e5a](https://github.com/patternfly/patternfly-react/commit/e561e5a4198799bc3729726296d9e657769dd6f6))
+
+
+
+
+
+## [3.153.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.11...@patternfly/react-core@3.153.12) (2020-04-20)
+
+
+### Bug Fixes
+
+* **Datatoolbar:** Revert change that prevents the current state of the toolbar filters to display in ([#4097](https://github.com/patternfly/patternfly-react/issues/4097)) ([241d390](https://github.com/patternfly/patternfly-react/commit/241d390981853959ac2bdad9a961127eda32c40f)), closes [#4096](https://github.com/patternfly/patternfly-react/issues/4096)
+
+
+
+
+
+## [3.153.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.10...@patternfly/react-core@3.153.11) (2020-04-17)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.153.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.9...@patternfly/react-core@3.153.10) (2020-04-17)
+
+
+### Bug Fixes
+
+* **tooltip:** codesandbox examples ([#4088](https://github.com/patternfly/patternfly-react/issues/4088)) ([7c34ce3](https://github.com/patternfly/patternfly-react/commit/7c34ce3dd9dce9a8adbfb3876834e847209027a7))
+
+
+
+
+
+## [3.153.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.8...@patternfly/react-core@3.153.9) (2020-04-16)
+
+
+### Bug Fixes
+
+* **DataToolbarFilter:** Add prop to enable removal of all chips in a filter category. ([#4060](https://github.com/patternfly/patternfly-react/issues/4060)) ([16340da](https://github.com/patternfly/patternfly-react/commit/16340dad7dc37d4a9446717adc7fc252469e3cd4)), closes [#4059](https://github.com/patternfly/patternfly-react/issues/4059)
+
+
+
+
+
+## [3.153.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.7...@patternfly/react-core@3.153.8) (2020-04-14)
+
+
+### Bug Fixes
+
+* **DataToolbar:** fix filter context from updating unnecessarily ([#4056](https://github.com/patternfly/patternfly-react/issues/4056)) ([dededf3](https://github.com/patternfly/patternfly-react/commit/dededf3e0091a5fa52470ca8f7e1e381b868d34b))
+
+
+
+
+
+## [3.153.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.6...@patternfly/react-core@3.153.7) (2020-04-13)
+
+
+### Bug Fixes
+
+* **DropdownToggleCheckbox:** fix ref to show indeterminate checkbox state properly ([#3990](https://github.com/patternfly/patternfly-react/issues/3990)) ([7c23a02](https://github.com/patternfly/patternfly-react/commit/7c23a02a36f9947808160f3a2fbba375e723163b))
+
+
+
+
+
+## [3.153.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.5...@patternfly/react-core@3.153.6) (2020-04-09)
+
+
+### Bug Fixes
+
+* **react-core:** guttersize type regression ([#4041](https://github.com/patternfly/patternfly-react/issues/4041)) ([1e3d585](https://github.com/patternfly/patternfly-react/commit/1e3d5856070c4cc84f72b71e914216f20e7a7fe1))
+
+
+
+
+
+## [3.153.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.4...@patternfly/react-core@3.153.5) (2020-04-08)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.153.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.3...@patternfly/react-core@3.153.4) (2020-04-07)
+
+
+### Bug Fixes
+
+* **dropdown:** respect already passed props ([#4016](https://github.com/patternfly/patternfly-react/issues/4016)) ([fe3c082](https://github.com/patternfly/patternfly-react/commit/fe3c08233f50d636490e0c664ac3a4b175b84ba6))
+
+
+
+
+
 ## [3.153.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.153.2...@patternfly/react-core@3.153.3) (2020-04-01)
 
 **Note:** Version bump only for package @patternfly/react-core
