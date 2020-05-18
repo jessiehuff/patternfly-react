@@ -4,6 +4,45 @@ section: overview
 releaseNoteTOC: true
 ---
 
+## 2020.06 release notes (2020-05-12)
+Packages released:
+- [@patternfly/react-catalog-view-extension@1.4.66](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.4.66)
+- [@patternfly/react-charts@5.3.21](https://www.npmjs.com/package/@patternfly/react-charts/v/5.3.21)
+- [@patternfly/react-core@3.158.1](https://www.npmjs.com/package/@patternfly/react-core/v/3.158.1)
+- [@patternfly/react-icons@3.15.17](https://www.npmjs.com/package/@patternfly/react-icons/v/3.15.17)
+- [@patternfly/react-inline-edit-extension@2.17.66](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.17.66)
+- [@patternfly/react-styles@3.7.14](https://www.npmjs.com/package/@patternfly/react-styles/v/3.7.14)
+- [@patternfly/react-table@2.28.47](https://www.npmjs.com/package/@patternfly/react-table/v/2.28.47)
+- [@patternfly/react-tokens@2.8.14](https://www.npmjs.com/package/@patternfly/react-tokens/v/2.8.14)
+- [@patternfly/react-topology@2.14.66](https://www.npmjs.com/package/@patternfly/react-topology/v/2.14.66)
+- [@patternfly/react-virtualized-extension@1.4.67](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.4.67)
+
+### Components
+- **Empty state:**  
+  - Added xl empty state to demo app and integration tests. ([#4200](https://github.com/patternfly/patternfly-react/pull/4200))
+- **Notification drawer:** 
+  - Added new Notification Drawer Component ([#4137](https://github.com/patternfly/patternfly-react/pull/4137))
+- **Page:**
+  - Made tabIndex optional ([#4181](https://github.com/patternfly/patternfly-react/pull/4181))
+- **Select:** 
+  - Added placeholder text for inline filter ([#4185](https://github.com/patternfly/patternfly-react/pull/4185))
+  - Added missing import to docs ([#4109](https://github.com/patternfly/patternfly-react/pull/4109))
+  - Added "0" and "All" selected badging ([#4186](https://github.com/patternfly/patternfly-react/pull/4186))
+- **Tabs:** 
+  - Updated to Properly handle null Tab and TabContent ([#4211](https://github.com/patternfly/patternfly-react/pull/4211))
+  - Added integration test for showing/hiding tab button ([#4205](https://github.com/patternfly/patternfly-react/pull/4205))
+  - Updated to properly check children before setting hidden ([#4179](https://github.com/patternfly/patternfly-react/pull/4179))
+  - Updated to allow hiding tab buttons ([#4196](https://github.com/patternfly/patternfly-react/pull/4196))
+
+### Charts
+- Fixed ChartDonut subTitleComponent being ignored in some cases([#4206](https://github.com/patternfly/patternfly-react/pull/4206))
+
+### Other
+- **Demos:**
+  - Added master detail demo ([#4115](https://github.com/patternfly/patternfly-react/pull/4115))
+- **Utilities:**
+  - Fixed fillTemplate ie11 compatibility ([#4155](https://github.com/patternfly/patternfly-react/pull/4155))
+
 ## 2020.05 release notes (2020-04-21)
 Packages released:
 - [@patternfly/react-catalog-view-extension@1.4.58](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.4.58)

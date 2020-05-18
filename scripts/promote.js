@@ -47,11 +47,11 @@ async function printList() {
   const packageNames = await getReleasePackageNames();
   for (let packageName of packageNames) {
     const currentTags = await fetchTags(packageName);
-    console.log(`"${packageName}": "${currentTags.prerelease || currentTags.latest}",`);
+    console.log(`"${packageName}": "${currentTags['prerelease-v4'] || currentTags.latest}",`);
   }
 }
 
-if (process.argv[2].includes('list')) {
+if (process.argv[2] && process.argv[2].includes('list')) {
   printList();
 }
 else {

@@ -30,15 +30,15 @@ class SingleSelectInput extends React.Component {
 
     this.state = {
       isToggleIcon: false,
-      isExpanded: false,
+      isOpen: false,
       selected: null,
       isDisabled: false,
       direction: SelectDirection.down
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -47,7 +47,7 @@ class SingleSelectInput extends React.Component {
       else {
         this.setState({
           selected: selection,
-          isExpanded: false
+          isOpen: false
         });
         console.log('selected:', selection);
       }
@@ -56,7 +56,7 @@ class SingleSelectInput extends React.Component {
     this.clearSelection = () => {
       this.setState({
         selected: null,
-        isExpanded: false
+        isOpen: false
       });
     };
 
@@ -86,7 +86,7 @@ class SingleSelectInput extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected, isDisabled, direction, isToggleIcon } = this.state;
+    const { isOpen, selected, isDisabled, direction, isToggleIcon } = this.state;
     const titleId = 'title-id-1';
     return (
       <div>
@@ -100,8 +100,8 @@ class SingleSelectInput extends React.Component {
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           selections={selected}
-          isExpanded={isExpanded}
-          ariaLabelledBy={titleId}
+          isOpen={isOpen}
+          aria-labelledby={titleId}
           isDisabled={isDisabled}
           direction={direction}
         >
@@ -152,20 +152,20 @@ class GroupedSingleSelectInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       selected: null
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
     this.onSelect = (event, selection) => {
       this.setState({
         selected: selection,
-        isExpanded: false
+        isOpen: false
       })
     };
 
@@ -192,7 +192,7 @@ class GroupedSingleSelectInput extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected } = this.state;
+    const { isOpen, selected } = this.state;
     const titleId = 'grouped-single-select-id';
     return (
       <div>
@@ -204,7 +204,7 @@ class GroupedSingleSelectInput extends React.Component {
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           selections={selected}
-          isExpanded={isExpanded}
+          isOpen={isOpen}
           placeholderText="Filter by status/vendor"
           ariaLabelledBy={titleId}
           isGrouped
@@ -226,13 +226,13 @@ class CheckboxSelectInput extends React.Component {
     super(props);
 
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       selected: []
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -267,8 +267,8 @@ class CheckboxSelectInput extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected } = this.state;
-    const titleId = 'checkbox-select-id-1';
+    const { isOpen, selected } = this.state;
+    const titleId = 'checkbox-select-id';
     return (
       <div>
         <span id={titleId} hidden>
@@ -280,9 +280,9 @@ class CheckboxSelectInput extends React.Component {
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           selections={selected}
-          isExpanded={isExpanded}
+          isOpen={isOpen}
           placeholderText="Filter by status"
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
         >
           {this.options}
         </Select>
@@ -301,13 +301,13 @@ class CheckboxSelectInputNoBadge extends React.Component {
     super(props);
 
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       selected: []
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -341,8 +341,8 @@ class CheckboxSelectInputNoBadge extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected } = this.state;
-    const titleId = 'checkbox-select-id-2';
+    const { isOpen, selected } = this.state;
+    const titleId = 'checkbox-select-id';
     return (
       <div>
         <span id={titleId} hidden>
@@ -355,7 +355,7 @@ class CheckboxSelectInputNoBadge extends React.Component {
           onSelect={this.onSelect}
           selections={selected}
           isCheckboxSelectionBadgeHidden
-          isExpanded={isExpanded}
+          isOpen={isOpen}
           placeholderText="Filter by status"
           ariaLabelledBy={titleId}
         >
@@ -375,13 +375,13 @@ class GroupedCheckboxSelectInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       selected: []
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -423,7 +423,7 @@ class GroupedCheckboxSelectInput extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected } = this.state;
+    const { isOpen, selected } = this.state;
     const titleId = 'grouped-checkbox-select-id-1';
     return (
       <div>
@@ -435,8 +435,81 @@ class GroupedCheckboxSelectInput extends React.Component {
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           selections={selected}
-          isExpanded={isExpanded}
+          isOpen={isOpen}
           placeholderText="Filter by status"
+          aria-labelledby={titleId}
+          isGrouped
+        >
+          {this.options}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+
+```js title=Grouped-single
+import React from 'react';
+import { Select, SelectOption, SelectVariant, SelectGroup } from '@patternfly/react-core';
+
+class GroupedSingleSelectInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+      selected: null
+    };
+
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection) => {
+      this.setState({
+        selected: selection,
+        isOpen: false
+      })
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: null
+      });
+    };
+
+    this.options = [
+      <SelectGroup label="Status" key="group1">
+        <SelectOption key={0} value="Running" />
+        <SelectOption key={1} value="Stopped" />
+        <SelectOption key={2} value="Down" />
+        <SelectOption key={3} value="Degraded" />
+        <SelectOption key={4} value="Needs Maintenence" />
+      </SelectGroup>,
+      <SelectGroup label="Vendor Names" key="group2">
+        <SelectOption key={5} value="Dell" />
+        <SelectOption key={6} value="Samsung" isDisabled />
+        <SelectOption key={7} value="Hewlett-Packard" />
+      </SelectGroup>
+    ];
+  }
+
+  render() {
+    const { isOpen, selected } = this.state;
+    const titleId = 'grouped-single-select-id';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Grouped Checkbox Title
+        </span>
+        <Select
+          variant={SelectVariant.single}
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
+          placeholderText="Filter by status/vendor"
           ariaLabelledBy={titleId}
           isGrouped
         >
@@ -448,7 +521,7 @@ class GroupedCheckboxSelectInput extends React.Component {
 }
 ```
 
-```js title=Grouped-checkbox-input-with-filtering
+```js title=Checkbox-input
 import React from 'react';
 import { Select, SelectOption, SelectGroup, SelectVariant } from '@patternfly/react-core';
 
@@ -457,7 +530,7 @@ class FilteringCheckboxSelectInput extends React.Component {
     super(props);
 
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       selected: []
     };
 
@@ -476,9 +549,9 @@ class FilteringCheckboxSelectInput extends React.Component {
       </SelectGroup>
     ];
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -524,7 +597,7 @@ class FilteringCheckboxSelectInput extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected, filteredOptions } = this.state;
+    const { isOpen, selected, filteredOptions } = this.state;
     const titleId = 'checkbox-filtering-select-id';
     return (
       <div>
@@ -536,13 +609,414 @@ class FilteringCheckboxSelectInput extends React.Component {
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           selections={selected}
-          isExpanded={isExpanded}
+          isOpen={isOpen}
+          placeholderText="Filter by status"
+          aria-labelledby={titleId}
+          onFilter={this.onFilter}
+          onClear={this.clearSelection}
+          isGrouped
+          hasInlineFilter
+        >
+          {this.options}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+
+```js title=Checkbox-input-no-badge
+import React from 'react';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+
+class CheckboxSelectInputNoBadge extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isOpen: false,
+      selected: []
+    };
+
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection) => {
+      const { selected } = this.state;
+      if (selected.includes(selection)) {
+        this.setState(
+          prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      } else {
+        this.setState(
+          prevState => ({ selected: [...prevState.selected, selection] }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: []
+      });
+    };
+
+    this.options = [
+      <SelectOption key={0} value="Debug" />,
+      <SelectOption key={1} value="Info" />,
+      <SelectOption key={2} value="Warn" />,
+      <SelectOption key={3} value="Error" />,
+    ];
+  }
+
+  render() {
+    const { isOpen, selected } = this.state;
+    const titleId = 'checkbox-select-id';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Checkbox Title
+        </span>
+        <Select
+          variant={SelectVariant.checkbox}
+          aria-label="Select Input"
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isCheckboxSelectionBadgeHidden
+          isOpen={isOpen}
+          placeholderText="Filter by status"
+          ariaLabelledBy={titleId}
+        >
+          {this.options}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+
+```js title=Grouped-checkbox-input-with-filtering
+import React from 'react';
+import { Select, SelectOption, SelectGroup, SelectVariant } from '@patternfly/react-core';
+
+class FilteringCheckboxSelectInput extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isOpen: false,
+      selected: []
+    };
+
+    this.options = [
+      <SelectGroup label="Status" key="group1">
+        <SelectOption key={0} value="Running" />
+        <SelectOption key={1} value="Stopped" />
+        <SelectOption key={2} value="Down" />
+        <SelectOption key={3} value="Degraded" />
+        <SelectOption key={4} value="Needs Maintenence" />
+      </SelectGroup>,
+      <SelectGroup label="Vendor Names" key="group2">
+        <SelectOption key={5} value="Dell" />
+        <SelectOption key={6} value="Samsung" isDisabled />
+        <SelectOption key={7} value="Hewlett-Packard" />
+      </SelectGroup>
+    ];
+
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection) => {
+      const { selected } = this.state;
+      if (selected.includes(selection)) {
+        this.setState(
+          prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      } else {
+        this.setState(
+          prevState => ({ selected: [...prevState.selected, selection] }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      }
+    };
+
+    this.onFilter = evt => {
+      const textInput = evt.target.value;
+      if (textInput === '') {
+        return this.options;
+      } else {
+        let filteredGroups = this.options
+          .map(group => {
+            let filteredGroup = React.cloneElement(group, {
+              children: group.props.children.filter(item => {
+                return item.props.value.toLowerCase().includes(textInput.toLowerCase());
+              })
+            });
+            if (filteredGroup.props.children.length > 0) return filteredGroup;
+          })
+          .filter(newGroup => newGroup);
+        return filteredGroups;
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: []
+      });
+    };
+  }
+
+  render() {
+    const { isOpen, selected, filteredOptions } = this.state;
+    const titleId = 'checkbox-filtering-select-id';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Checkbox Title
+        </span>
+        <Select
+          variant={SelectVariant.checkbox}
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
           placeholderText="Filter by status"
           ariaLabelledBy={titleId}
           onFilter={this.onFilter}
           onClear={this.clearSelection}
           isGrouped
           hasInlineFilter
+        >
+          {this.options}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+
+```js title=Grouped-checkbox-input-with-filtering-and-placeholder-text
+import React from 'react';
+import { Select, SelectOption, SelectGroup, SelectVariant } from '@patternfly/react-core';
+
+class FilteringCheckboxSelectInputWithPlaceholder extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isOpen: false,
+      selected: []
+    };
+
+    this.options = [
+      <SelectGroup label="Status" key="group1">
+        <SelectOption key={0} value="Running" />
+        <SelectOption key={1} value="Stopped" />
+        <SelectOption key={2} value="Down" />
+        <SelectOption key={3} value="Degraded" />
+        <SelectOption key={4} value="Needs Maintenence" />
+      </SelectGroup>,
+      <SelectGroup label="Vendor Names" key="group2">
+        <SelectOption key={5} value="Dell" />
+        <SelectOption key={6} value="Samsung" isDisabled />
+        <SelectOption key={7} value="Hewlett-Packard" />
+      </SelectGroup>
+    ];
+
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection) => {
+      const { selected } = this.state;
+      if (selected.includes(selection)) {
+        this.setState(
+          prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      } else {
+        this.setState(
+          prevState => ({ selected: [...prevState.selected, selection] }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      }
+    };
+
+    this.onFilter = evt => {
+      const textInput = evt.target.value;
+      if (textInput === '') {
+        return this.options;
+      } else {
+        let filteredGroups = this.options
+          .map(group => {
+            let filteredGroup = React.cloneElement(group, {
+              children: group.props.children.filter(item => {
+                return item.props.value.toLowerCase().includes(textInput.toLowerCase());
+              })
+            });
+            if (filteredGroup.props.children.length > 0) return filteredGroup;
+          })
+          .filter(newGroup => newGroup);
+        return filteredGroups;
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: []
+      });
+    };
+  }
+
+  render() {
+    const { isOpen, selected, filteredOptions } = this.state;
+    const titleId = 'checkbox-filtering-select-id';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Checkbox Title
+        </span>
+        <Select
+          variant={SelectVariant.checkbox}
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
+          placeholderText="Filter by status"
+          ariaLabelledBy={titleId}
+          onFilter={this.onFilter}
+          onClear={this.clearSelection}
+          isGrouped
+          hasInlineFilter
+          inlineFilterPlaceholderText="Filter by status"
+        >
+          {this.options}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+
+```js title=Grouped-checkbox-input-with-filtering-and-custom-badging
+import React from 'react';
+import { Select, SelectOption, SelectGroup, SelectVariant } from '@patternfly/react-core';
+
+class FilteringCheckboxSelectInputWithBadging extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isOpen: false,
+      selected: [],
+      customBadgeText: 0,
+    };
+
+    this.options = [
+      <SelectGroup label="Status" key="group1">
+        <SelectOption key={0} value="Running" />
+        <SelectOption key={1} value="Stopped" />
+        <SelectOption key={2} value="Down" />
+        <SelectOption key={3} value="Degraded" />
+        <SelectOption key={4} value="Needs Maintenence" />
+      </SelectGroup>,
+      <SelectGroup label="Vendor Names" key="group2">
+        <SelectOption key={5} value="Dell" />
+        <SelectOption key={6} value="Samsung" isDisabled />
+        <SelectOption key={7} value="Hewlett-Packard" />
+      </SelectGroup>
+    ];
+
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+
+    this.onSelect = (event, selection) => {
+      const { selected } = this.state;
+      if (selected.includes(selection)) {
+        this.setState(
+          prevState => ({ selected: prevState.selected.filter(item => item !== selection), customBadgeText: this.setBadgeText(prevState.selected.length - 1) }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      } else {
+        this.setState(
+          prevState => ({ selected: [...prevState.selected, selection], customBadgeText: this.setBadgeText(prevState.selected.length + 1) }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      }
+    };
+
+    this.onFilter = evt => {
+      const textInput = evt.target.value;
+      if (textInput === '') {
+        return this.options;
+      } else {
+        let filteredGroups = this.options
+          .map(group => {
+            let filteredGroup = React.cloneElement(group, {
+              children: group.props.children.filter(item => {
+                return item.props.value.toLowerCase().includes(textInput.toLowerCase());
+              })
+            });
+            if (filteredGroup.props.children.length > 0) return filteredGroup;
+          })
+          .filter(newGroup => newGroup);
+        return filteredGroups;
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: [],
+        customBadgeText: this.setBadgeText(0)
+      });
+    };
+
+    this.setBadgeText = (selected) => {
+      if (selected === 7) {
+        return 'All';
+      }
+      if (selected === 0) {
+        return 0;
+      }
+      return null;
+    };
+  }
+
+  render() {
+    const { isOpen, selected, filteredOptions, customBadgeText } = this.state;
+    const titleId = 'checkbox-filtering-select-id';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Checkbox Title
+        </span>
+        <Select
+          variant={SelectVariant.checkbox}
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isOpen={isOpen}
+          placeholderText="Filter by status"
+          ariaLabelledBy={titleId}
+          onFilter={this.onFilter}
+          onClear={this.clearSelection}
+          isGrouped
+          hasInlineFilter
+          customBadgeText={customBadgeText}
         >
           {this.options}
         </Select>
@@ -569,16 +1043,16 @@ class TypeaheadSelectInput extends React.Component {
         { value: 'New York' },
         { value: 'North Carolina' }
       ],
-      isExpanded: false,
+      isOpen: false,
       selected: null,
       isDisabled: false,
       isCreatable: false,
       hasOnCreateOption: false
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -587,7 +1061,7 @@ class TypeaheadSelectInput extends React.Component {
       else {
         this.setState({
           selected: selection,
-          isExpanded: false
+          isOpen: false
         });
         console.log('selected:', selection);
       }
@@ -602,7 +1076,7 @@ class TypeaheadSelectInput extends React.Component {
     this.clearSelection = () => {
       this.setState({
         selected: null,
-        isExpanded: false
+        isOpen: false
       });
     };
 
@@ -626,7 +1100,7 @@ class TypeaheadSelectInput extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected, isDisabled, isCreatable, hasOnCreateOption, options } = this.state;
+    const { isOpen, selected, isDisabled, isCreatable, hasOnCreateOption, options } = this.state;
     const titleId = 'typeahead-select-id-1';
     return (
       <div>
@@ -635,13 +1109,13 @@ class TypeaheadSelectInput extends React.Component {
         </span>
         <Select
           variant={SelectVariant.typeahead}
-          ariaLabelTypeAhead="Select a state"
+          typeAheadAriaLabel="Select a state"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           onClear={this.clearSelection}
           selections={selected}
-          isExpanded={isExpanded}
-          ariaLabelledBy={titleId}
+          isOpen={isOpen}
+          aria-labelledby={titleId}
           placeholderText="Select a state"
           isDisabled={isDisabled}
           isCreatable={isCreatable}
@@ -697,15 +1171,13 @@ class TypeaheadSelectInput extends React.Component {
       <SelectOption key={5} value="North Carolina" />
     ];
     this.state = {
-      isExpanded: false,
-      selected: null,
-      options: this.options
+      isOpen: false,
+      selected: null
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded,
-        options: this.options
+        isOpen
       });
     };
 
@@ -714,7 +1186,7 @@ class TypeaheadSelectInput extends React.Component {
       else {
         this.setState({
           selected: selection,
-          isExpanded: false
+          isOpen: false
         });
         console.log('selected:', selection);
       }
@@ -723,8 +1195,7 @@ class TypeaheadSelectInput extends React.Component {
     this.clearSelection = () => {
       this.setState({
         selected: null,
-        isExpanded: false,
-        options: this.options
+        isOpen: false
       });
     };
 
@@ -733,16 +1204,12 @@ class TypeaheadSelectInput extends React.Component {
       try {
         input = new RegExp(e.target.value, 'i');
       } catch (err) {}
-      let typeaheadFilteredChildren =
-        e.target.value !== '' ? this.options.filter(child => input.test(child.props.value)) : this.options;
-      this.setState({
-        options: typeaheadFilteredChildren
-      });
+      return e.target.value !== '' ? this.options.filter(child => input.test(child.props.value)) : this.options;
     };
   }
 
   render() {
-    const { isExpanded, selected, options } = this.state;
+    const { isOpen, selected } = this.state;
     const titleId = 'typeahead-select-id-2';
     return (
       <div>
@@ -751,17 +1218,17 @@ class TypeaheadSelectInput extends React.Component {
         </span>
         <Select
           variant={SelectVariant.typeahead}
-          ariaLabelTypeAhead="Select a state"
+          typeAheadAriaLabel="Select a state"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           onClear={this.clearSelection}
           onFilter={this.customFilter}
           selections={selected}
-          isExpanded={isExpanded}
-          ariaLabelledBy={titleId}
+          isOpen={isOpen}
+          aria-labelledby={titleId}
           placeholderText="Select a state"
         >
-          {options}
+          {this.options}
         </Select>
       </div>
     );
@@ -786,7 +1253,7 @@ class MultiTypeaheadSelectInput extends React.Component {
         { value: 'New York', disabled: false },
         { value: 'North Carolina', disabled: false }
       ],
-      isExpanded: false,
+      isOpen: false,
       selected: [],
       isCreatable: false,
       hasOnCreateOption: false
@@ -798,9 +1265,9 @@ class MultiTypeaheadSelectInput extends React.Component {
       });
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -822,7 +1289,7 @@ class MultiTypeaheadSelectInput extends React.Component {
     this.clearSelection = () => {
       this.setState({
         selected: [],
-        isExpanded: false
+        isOpen: false
       });
     };
 
@@ -840,7 +1307,7 @@ class MultiTypeaheadSelectInput extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected, isCreatable, hasOnCreateOption } = this.state;
+    const { isOpen, selected, isCreatable, hasOnCreateOption } = this.state;
     const titleId = 'multi-typeahead-select-id-1';
 
     return (
@@ -850,13 +1317,13 @@ class MultiTypeaheadSelectInput extends React.Component {
         </span>
         <Select
           variant={SelectVariant.typeaheadMulti}
-          ariaLabelTypeAhead="Select a state"
+          typeAheadAriaLabel="Select a state"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           onClear={this.clearSelection}
           selections={selected}
-          isExpanded={isExpanded}
-          ariaLabelledBy={titleId}
+          isOpen={isOpen}
+          aria-labelledby={titleId}
           placeholderText="Select a state"
           isCreatable={isCreatable}
           onCreateOption={(hasOnCreateOption && this.onCreateOption) || undefined}
@@ -920,13 +1387,13 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
     ];
 
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       selected: []
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -948,7 +1415,7 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
     this.clearSelection = () => {
       this.setState({
         selected: [],
-        isExpanded: false
+        isOpen: false
       });
     };
 
@@ -962,7 +1429,7 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected } = this.state;
+    const { isOpen, selected } = this.state;
     const titleId = 'multi-typeahead-select-id-2';
 
     return (
@@ -972,14 +1439,14 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
         </span>
         <Select
           variant={SelectVariant.typeaheadMulti}
-          ariaLabelTypeAhead="Select a state"
+          typeAheadAriaLabel="Select a state"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           onClear={this.clearSelection}
           onFilter={this.customFilter}
           selections={selected}
-          isExpanded={isExpanded}
-          ariaLabelledBy={titleId}
+          isOpen={isOpen}
+          aria-labelledby={titleId}
           placeholderText="Select a state"
         >
           {this.options}
@@ -1007,14 +1474,14 @@ class PlainSelectInput extends React.Component {
     ];
 
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       isPlain: true,
       selected: []
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -1036,13 +1503,13 @@ class PlainSelectInput extends React.Component {
     this.clearSelection = () => {
       this.setState({
         selected: [],
-        isExpanded: false
+        isOpen: false
       });
     };
   }
 
   render() {
-    const { isExpanded, isPlain, selected } = this.state;
+    const { isOpen, isPlain, selected } = this.state;
     const titleId = 'plain-typeahead-select-id';
 
     return (
@@ -1052,14 +1519,14 @@ class PlainSelectInput extends React.Component {
         </span>
         <Select
           variant={SelectVariant.typeaheadMulti}
-          ariaLabelTypeAhead="Select a state"
+          typeAheadAriaLabel="Select a state"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           onClear={this.clearSelection}
           selections={selected}
-          isExpanded={isExpanded}
+          isOpen={isOpen}
           isPlain={isPlain}
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
           placeholderText="Select a state"
         >
           {this.options.map((option, index) => (
@@ -1081,14 +1548,14 @@ class SingleSelectInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isExpanded: false,
+      isOpen: false,
       isDisabled: false,
       direction: SelectDirection.down
     };
 
-    this.onToggle = isExpanded => {
+    this.onToggle = isOpen => {
       this.setState({
-        isExpanded
+        isOpen
       });
     };
 
@@ -1112,7 +1579,7 @@ class SingleSelectInput extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected, isDisabled, direction } = this.state;
+    const { isOpen, selected, isDisabled, direction } = this.state;
     const titleId = 'title-id-2';
     return (
       <div>
@@ -1123,8 +1590,8 @@ class SingleSelectInput extends React.Component {
           variant={SelectVariant.panel}
           aria-label="Select Input"
           onToggle={this.onToggle}
-          isExpanded={isExpanded}
-          ariaLabelledBy={titleId}
+          isOpen={isOpen}
+          aria-labelledby={titleId}
           isDisabled={isDisabled}
           direction={direction}
           customContent="[Panel contents here]"

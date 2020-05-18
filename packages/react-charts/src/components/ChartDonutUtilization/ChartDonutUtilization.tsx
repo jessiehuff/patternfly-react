@@ -5,14 +5,14 @@ import {
   AnimatePropTypeInterface,
   CategoryPropType,
   ColorScalePropType,
+  Data,
   DataGetterPropType,
-  EventPropTypeInterface,
   PaddingProps,
   StringOrNumberOrCallback,
-  VictoryPie,
+  EventPropTypeInterface,
   VictoryStyleInterface
-} from 'victory';
-import { Data } from 'victory-core';
+} from 'victory-core';
+import { VictoryPie, VictorySliceProps } from 'victory-pie';
 import { ChartContainer } from '../ChartContainer';
 import { ChartDonut, ChartDonutProps } from '../ChartDonut';
 import { ChartCommonStyles, ChartThemeDefinition, ChartDonutUtilizationStyles } from '../ChartTheme';
@@ -215,6 +215,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    * ]}
    */
   events?: EventPropTypeInterface<'data' | 'labels' | 'parent', StringOrNumberOrCallback | string[] | number[]>[];
+
   /**
    * ChartDonutUtilization uses the standard externalEventMutations prop.
    */
@@ -239,7 +240,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    * When creating a donut chart, this prop determines the number of pixels between
    * the center of the chart and the inner edge.
    */
-  innerRadius?: number;
+  innerRadius?: number | ((props: VictorySliceProps) => number);
   /**
    * Invert the threshold color scale used to represent warnings, errors, etc.
    *
@@ -270,7 +271,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    * The labelPosition prop specifies the angular position of each label relative to its corresponding slice.
    * When this prop is not given, the label will be positioned at the centroid of each slice.
    */
-  labelPosition?: 'startAngle' | 'endAngle' | 'centroid';
+  labelPosition?: 'startAngle' | 'centroid' | 'endAngle' | ((props: VictorySliceProps) => string);
   /**
    * The legend component to render with chart.
    *
@@ -313,7 +314,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    * The labelRadius prop defines the radius of the arc that will be used for positioning each slice label.
    * If this prop is not set, the label radius will default to the radius of the pie + label padding.
    */
-  labelRadius?: number;
+  labelRadius?: number | ((props: VictorySliceProps) => number);
   /**
    * The labels prop defines labels that will appear above each bar in your chart.
    * This prop should be given as an array of values or as a function of data.
@@ -323,7 +324,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    *
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
-  labels?: string[] | ((data: any) => string);
+  labels?: string[] | ((data: any) => string | null);
   /**
    * The name prop is used to reference a component instance when defining shared events.
    */
@@ -349,7 +350,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    * Specifies the radius of the chart. If this property is not provided it is computed
    * from width, height, and padding props
    */
-  radius?: number;
+  radius?: number | ((props: VictorySliceProps) => number);
   /**
    * The sharedEvents prop is used internally to coordinate events between components. It should not be set manually.
    */
@@ -394,6 +395,16 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
   /**
    * The label component to render the chart subTitle.
    *
+   * When overriding the subTitleComponent prop, title and subTitle will be centered independently. You may choose to
+   * use the x and y props of ChartLabel to adjust the center position. For example:
+   *
+   * <pre>
+   * subTitle="Pets"
+   * subTitleComponent={<ChartLabel y={130} />}
+   * title={100}
+   * titleComponent={<ChartLabel y={107} />}
+   * </pre>
+   *
    * Note: Default label properties may be applied
    */
   subTitleComponent?: React.ReactElement<any>;
@@ -429,6 +440,42 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    * The title for the donut chart label
    */
   title?: string;
+  /**
+   * The label component to render the donut chart title.
+   *
+   * When centering both title and subTitle props, it's possible to override both styles via an array provided to
+   * ChartLabel. The first item in the array is associated with title styles, while the second item in the array is
+   * associated with subtitle styles.
+   *
+   * <pre>
+   * subTitle="Pets"
+   * title={100}
+   * titleComponent={
+   *   <ChartLabel style={[{
+   *       fill: 'red', // title color
+   *       fontSize: 24
+   *     }, {
+   *       fill: 'blue', // subtitle color
+   *       fontSize: 14
+   *     }]}
+   *   />
+   * }
+   * </pre>
+   *
+   * In this case, both title and subTitle will be centered together. However, should you also override the
+   * subTitleComponent prop, title and subTitle will be centered independently. You may choose to
+   * use the x and y props of ChartLabel to adjust the center position. For example:
+   *
+   * <pre>
+   * subTitle="Pets"
+   * subTitleComponent={<ChartLabel y={130} />}
+   * title={100}
+   * titleComponent={<ChartLabel y={107} />}
+   * </pre>
+   *
+   * Note: Default label properties may be applied
+   */
+  titleComponent?: React.ReactElement<any>;
   /**
    * The dynamic portion of the chart will change colors when data reaches the given threshold. Colors may be
    * overridden, but defaults shall be provided.
