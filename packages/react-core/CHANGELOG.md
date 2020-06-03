@@ -3,6 +3,100 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.18.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.1...@patternfly/react-core@4.18.2) (2020-06-03)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.18.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.0...@patternfly/react-core@4.18.1) (2020-06-01)
+
+
+### Bug Fixes
+
+* **breakpoints:** make API consistent and appear in docs ([#4310](https://github.com/patternfly/patternfly-react/issues/4310)) ([ac1afa6](https://github.com/patternfly/patternfly-react/commit/ac1afa60067346c658fcb160534d9ddaf7dafbc6))
+
+
+
+
+
+# [4.18.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.17.3...@patternfly/react-core@4.18.0) (2020-05-28)
+
+
+### Features
+
+* **Form:** remove semicolons from docs ([#4296](https://github.com/patternfly/patternfly-react/issues/4296)) ([c666474](https://github.com/patternfly/patternfly-react/commit/c666474bad1741fbd30c3ceccaa3eafc5187bd72))
+
+
+
+
+
+## [4.17.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.17.2...@patternfly/react-core@4.17.3) (2020-05-27)
+
+
+### Bug Fixes
+
+* **loginpage:** basic example logo ([#4294](https://github.com/patternfly/patternfly-react/issues/4294)) ([e140178](https://github.com/patternfly/patternfly-react/commit/e140178f2378710c91e7667e9158b0b0f5c974ec))
+
+
+
+
+
+## [4.17.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.17.1...@patternfly/react-core@4.17.2) (2020-05-26)
+
+
+### Bug Fixes
+
+* **wiz:** add missing label for wiz-in-modal ([#4280](https://github.com/patternfly/patternfly-react/issues/4280)) ([71a45d1](https://github.com/patternfly/patternfly-react/commit/71a45d122b20afddb9f2c99105f3603cbfc96bac))
+
+
+
+
+
+## [4.17.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.17.0...@patternfly/react-core@4.17.1) (2020-05-21)
+
+
+### Bug Fixes
+
+* **nav:** fix expanding on new span icon ([#4275](https://github.com/patternfly/patternfly-react/issues/4275)) ([8c9c008](https://github.com/patternfly/patternfly-react/commit/8c9c0087b9a11e294d1d53ea47f2e28533a2b467))
+* **util:** 3xl and 4xl breakpoint modifiers ([#4276](https://github.com/patternfly/patternfly-react/issues/4276)) ([6bd33d5](https://github.com/patternfly/patternfly-react/commit/6bd33d5a51288291f40b9a97bed12371b0fe92cc))
+
+
+
+
+
+# [4.17.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.16.1...@patternfly/react-core@4.17.0) (2020-05-21)
+
+
+### Features
+
+* **drawer:** use the breakpoint mods prop instead of width props ([#4270](https://github.com/patternfly/patternfly-react/issues/4270)) ([4cac8d0](https://github.com/patternfly/patternfly-react/commit/4cac8d01ea771a7e8b082ca33242fcf590b861f8))
+
+
+
+
+
+## [4.16.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.16.0...@patternfly/react-core@4.16.1) (2020-05-21)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [4.16.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.15.0...@patternfly/react-core@4.16.0) (2020-05-19)
+
+
+### Features
+
+* **Select:** fix console warnings ([#4265](https://github.com/patternfly/patternfly-react/issues/4265)) ([109a53f](https://github.com/patternfly/patternfly-react/commit/109a53f9ff8d874cc5c7f429af7be8090d962dfe))
+
+
+
+
+
 # [4.15.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.158.1...@patternfly/react-core@4.15.0) (2020-05-15)
 
 

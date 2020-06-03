@@ -1,13 +1,12 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
+import { getOUIAProps, OUIAProps } from '@patternfly/react-core/dist/js/helpers/ouia';
 import {
-  getOUIAProps,
-  OUIAProps,
   DropdownDirection,
-  DropdownPosition,
-  DropdownItemProps
-} from '@patternfly/react-core';
+  DropdownPosition
+} from '@patternfly/react-core/dist/js/components/Dropdown/dropdownConstants';
+import { DropdownItemProps } from '@patternfly/react-core/dist/js/components/Dropdown/DropdownItem';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
 import { Provider } from './base';
@@ -238,7 +237,10 @@ export interface IRow extends RowType {
   isExpanded?: boolean;
   isFirstVisible?: boolean;
   isLastVisible?: boolean;
+  /* Whether the row checkbox is selected */
   selected?: boolean;
+  /* Whether the row checkbox is disabled */
+  disableCheckbox?: boolean;
 }
 
 export interface TableProps {

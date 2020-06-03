@@ -6,14 +6,17 @@ import {
   D3Scale,
   DomainPropType,
   DomainPaddingPropType,
+  EventCallbackInterface,
   EventPropTypeInterface,
   PaddingProps,
+  RangePropType,
   ScalePropType,
   StringOrNumberOrCallback,
-  VictoryStyleInterface
+  StringOrNumberOrList,
+  VictoryStyleInterface,
+  VictoryStyleObject
 } from 'victory-core';
-import { VictoryChart, VictoryChartProps } from 'victory-chart';
-import { VictoryZoomContainer } from 'victory-zoom-container';
+import { AxesType, VictoryChart, VictoryChartProps } from 'victory-chart';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLegend, ChartLegendOrientation, ChartLegendPosition } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
@@ -24,14 +27,6 @@ import { getClassName, getComputedLegend, getLabelTextSize, getPaddingForSide, g
  */
 export interface ChartProps extends VictoryChartProps {
   /**
-   * Specifies the zoom capability of the container component. A value of true allows the chart to
-   * zoom in and out. Zoom events are controlled by scrolling. When zoomed in, panning events are
-   * controlled by dragging. By default this value is set to false.
-   *
-   * Note: Only compatible with charts that display an x, y axis
-   */
-  allowZoom?: boolean;
-  /**
    * The animate prop specifies props for VictoryAnimation to use.
    * The animate prop should also be used to specify enter and exit
    * transition configurations with the `onExit` and `onEnter` namespaces respectively.
@@ -39,7 +34,7 @@ export interface ChartProps extends VictoryChartProps {
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
-  animate?: AnimatePropTypeInterface;
+  animate?: boolean | AnimatePropTypeInterface;
   /**
    * The ariaDesc prop specifies the description of the chart/SVG to assist with
    * accessibility for screen readers.
@@ -55,9 +50,16 @@ export interface ChartProps extends VictoryChartProps {
    */
   ariaTitle?: string;
   /**
+   * The backgroundComponent prop takes a component instance which will be responsible for rendering a background if the
+   * Chart's style component includes background styles. The new element created from the passed backgroundComponent
+   * will be provided with the following properties calculated by Chart: height, polar, scale, style, x, y, width.
+   * All of these props on Background should take prececence over what VictoryChart is trying to set.
+   */
+  backgroundComponent?: React.ReactElement;
+  /**
    * The children to render with the chart
    */
-  children?: React.ReactNode;
+  children?: React.ReactNode | React.ReactNode[];
   /**
    * The containerComponent prop takes an entire component which will be used to
    * create a container element for standalone charts.
@@ -74,6 +76,14 @@ export interface ChartProps extends VictoryChartProps {
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows ..." />
    */
   containerComponent?: React.ReactElement<any>;
+  /**
+   * **This prop should not be set manually.**
+   */
+  defaultAxes?: AxesType;
+  /**
+   * **This prop should not be set manually.**
+   */
+  defaultPolarAxes?: AxesType;
   /**
    * The domain prop describes the range of values your chart will include. This prop can be
    * given as a array of the minimum and maximum expected values for your chart,
@@ -144,11 +154,11 @@ export interface ChartProps extends VictoryChartProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<string, StringOrNumberOrCallback>[];
+  events?: EventPropTypeInterface<string, string[] | number[] | string | number>[];
   /**
    * Chart uses the standard externalEventMutations prop.
    */
-  externalEventMutations?: any[];
+  externalEventMutations?: EventCallbackInterface<string | string[], StringOrNumberOrList>[];
   /**
    * The groupComponent prop takes an entire component which will be used to
    * create group elements for use within container elements. This prop defaults
@@ -257,8 +267,11 @@ export interface ChartProps extends VictoryChartProps {
    */
   padding?: PaddingProps;
   /**
-   * Victory components can pass a boolean polar prop to specify whether a label is part of a polar chart.
    * **This prop should not be set manually.**
+   */
+  prependDefaultAxes?: boolean;
+  /**
+   * Victory components can pass a boolean polar prop to specify whether a label is part of a polar chart.
    */
   polar?: boolean;
   /**
@@ -274,7 +287,7 @@ export interface ChartProps extends VictoryChartProps {
    * Cartesian: range={{ x: [50, 250], y: [50, 250] }}
    * Polar: range={{ x: [0, 360], y: [0, 250] }}
    */
-  range?: [number, number] | { x?: [number, number]; y?: [number, number] };
+  range?: RangePropType;
   /**
    * The scale prop determines which scales your chart should use. This prop can be
    * given as a string specifying a supported scale ("linear", "time", "log", "sqrt"),
@@ -290,9 +303,11 @@ export interface ChartProps extends VictoryChartProps {
         y?: ScalePropType | D3Scale;
       };
   /**
-   * The sharedEvents prop is used internally to coordinate events between components. It should not be set manually.
+   * The sharedEvents prop is used internally to coordinate events between components.
+   *
+   * **This prop should not be set manually.**
    */
-  sharedEvents?: any;
+  sharedEvents?: { events: any[]; getEventState: Function };
   /**
    * By default domainPadding is coerced to existing quadrants. This means that if a given domain only includes positive
    * values, no amount of padding applied by domainPadding will result in a domain with negative values. This is the
@@ -329,7 +344,7 @@ export interface ChartProps extends VictoryChartProps {
    * for data, labels and parent. Any valid svg styles are supported, but width, height, and padding should be specified
    * via props as they determine relative layout for components in Chart.
    */
-  style?: Pick<VictoryStyleInterface, 'parent'>;
+  style?: Pick<VictoryStyleInterface, 'parent'> & { background?: VictoryStyleObject };
   /**
    * The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or
    * props defined in theme may be overwritten by props specified on the component instance.
@@ -364,7 +379,6 @@ export interface ChartProps extends VictoryChartProps {
 }
 
 export const Chart: React.FunctionComponent<ChartProps> = ({
-  allowZoom = false,
   ariaDesc,
   ariaTitle,
   children,
@@ -378,7 +392,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
 
   // destructure last
   theme = getTheme(themeColor, themeVariant),
-  containerComponent = allowZoom ? <VictoryZoomContainer /> : <ChartContainer />,
+  containerComponent = <ChartContainer />,
   legendOrientation = theme.legend.orientation as ChartLegendOrientation,
   height = theme.chart.height,
   width = theme.chart.width,

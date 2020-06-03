@@ -40,7 +40,14 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
   render() {
     const { isExpanded } = this.state;
     const panelContent = (
-      <DrawerPanelContent width={100} widthOnLg={50} widthOnXl={33} widthOn2Xl={25}>
+      <DrawerPanelContent
+        widths={{
+          default: 'width_100',
+          lg: 'width_50',
+          xl: 'width_33',
+          '2xl': 'width_25'
+        }}
+      >
         <DrawerHead>
           <span>drawer-panel</span>
           <DrawerActions>

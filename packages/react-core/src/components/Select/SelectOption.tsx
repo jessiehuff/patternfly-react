@@ -32,6 +32,8 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   isSelected?: boolean;
   /** Internal flag indicating if the option is checked */
   isChecked?: boolean;
+  /** Flag forcing the focused state */
+  isFocused?: boolean;
   /** Internal callback for ref tracking */
   sendRef?: (ref: React.ReactNode, index: number) => void;
   /** Internal callback for keyboard navigation */
@@ -94,6 +96,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       isNoResultsOption,
       isSelected,
       isChecked,
+      isFocused,
       sendRef,
       keyHandler,
       index,
@@ -114,6 +117,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                     styles.selectMenuItem,
                     isSelected && styles.modifiers.selected,
                     isDisabled && styles.modifiers.disabled,
+                    isFocused && styles.modifiers.focus,
                     className
                   )}
                   onClick={(event: any) => {
@@ -145,6 +149,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   checkStyles.check,
                   styles.selectMenuItem,
                   isDisabled && styles.modifiers.disabled,
+                  isFocused && styles.modifiers.focus,
                   className
                 )}
                 onKeyDown={this.onKeyDown}

@@ -3,6 +3,72 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.13.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.13.0...@patternfly/react-integration@4.13.1) (2020-06-01)
+
+
+### Bug Fixes
+
+* **breakpoints:** make API consistent and appear in docs ([#4310](https://github.com/patternfly/patternfly-react/issues/4310)) ([ac1afa6](https://github.com/patternfly/patternfly-react/commit/ac1afa60067346c658fcb160534d9ddaf7dafbc6))
+
+
+
+
+
+# [4.13.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.12.3...@patternfly/react-integration@4.13.0) (2020-05-28)
+
+
+### Features
+
+* **Form:** remove semicolons from docs ([#4296](https://github.com/patternfly/patternfly-react/issues/4296)) ([c666474](https://github.com/patternfly/patternfly-react/commit/c666474bad1741fbd30c3ceccaa3eafc5187bd72))
+
+
+
+
+
+## [4.12.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.12.2...@patternfly/react-integration@4.12.3) (2020-05-26)
+
+
+### Bug Fixes
+
+* **wiz:** add missing label for wiz-in-modal ([#4280](https://github.com/patternfly/patternfly-react/issues/4280)) ([71a45d1](https://github.com/patternfly/patternfly-react/commit/71a45d122b20afddb9f2c99105f3603cbfc96bac))
+
+
+
+
+
+## [4.12.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.12.1...@patternfly/react-integration@4.12.2) (2020-05-21)
+
+
+### Bug Fixes
+
+* **charts:** Use Victory's createContainer instead of allowZoom prop ([#4278](https://github.com/patternfly/patternfly-react/issues/4278)) ([8c353d9](https://github.com/patternfly/patternfly-react/commit/8c353d9a5a4322984d5e564d5737e53e796928f6))
+
+
+
+
+
+## [4.12.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.12.0...@patternfly/react-integration@4.12.1) (2020-05-21)
+
+
+### Bug Fixes
+
+* **nav:** fix expanding on new span icon ([#4275](https://github.com/patternfly/patternfly-react/issues/4275)) ([8c9c008](https://github.com/patternfly/patternfly-react/commit/8c9c0087b9a11e294d1d53ea47f2e28533a2b467))
+
+
+
+
+
+# [4.12.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.11.0...@patternfly/react-integration@4.12.0) (2020-05-21)
+
+
+### Features
+
+* **drawer:** use the breakpoint mods prop instead of width props ([#4270](https://github.com/patternfly/patternfly-react/issues/4270)) ([4cac8d0](https://github.com/patternfly/patternfly-react/commit/4cac8d01ea771a7e8b082ca33242fcf590b861f8))
+
+
+
+
+
 # [4.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.31.3...@patternfly/react-integration@4.11.0) (2020-05-15)
 
 

@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
 import { DrawerContext } from './Drawer';
+import { formatBreakpointMods } from '../../helpers/util';
 
 export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the drawer. */
@@ -10,24 +11,20 @@ export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement>
   children?: React.ReactNode;
   /** Flag indicating that the drawer panel should not have a border. */
   hasNoBorder?: boolean;
-  /** Default width for drawer panel */
-  width?: 25 | 33 | 50 | 66 | 75 | 100;
-  /** Drawer panel width on large viewports */
-  widthOnLg?: 25 | 33 | 50 | 66 | 75 | 100;
-  /** Drawer panel width on xl viewports */
-  widthOnXl?: 25 | 33 | 50 | 66 | 75 | 100;
-  /** Drawer panel width on 2xl viewports */
-  widthOn2Xl?: 25 | 33 | 50 | 66 | 75 | 100;
+  /** Width for drawer panel at various breakpoints */
+  widths?: {
+    default?: 'width_25' | 'width_33' | 'width_50' | 'width_66' | 'width_75' | 'width_100';
+    lg?: 'width_25' | 'width_33' | 'width_50' | 'width_66' | 'width_75' | 'width_100';
+    xl?: 'width_25' | 'width_33' | 'width_50' | 'width_66' | 'width_75' | 'width_100';
+    '2xl'?: 'width_25' | 'width_33' | 'width_50' | 'width_66' | 'width_75' | 'width_100';
+  };
 }
 
 export const DrawerPanelContent: React.SFC<DrawerPanelContentProps> = ({
   className = '',
   children,
   hasNoBorder = false,
-  width,
-  widthOnLg,
-  widthOnXl,
-  widthOn2Xl,
+  widths,
   ...props
 }: DrawerPanelContentProps) => (
   <DrawerContext.Consumer>
@@ -36,10 +33,7 @@ export const DrawerPanelContent: React.SFC<DrawerPanelContentProps> = ({
         className={css(
           styles.drawerPanel,
           hasNoBorder && styles.modifiers.noBorder,
-          width && styles.modifiers[`width_${width}` as keyof typeof styles.modifiers],
-          widthOnLg && styles.modifiers[`width_${widthOnLg}OnLg` as keyof typeof styles.modifiers],
-          widthOnXl && styles.modifiers[`width_${widthOnXl}OnXl` as keyof typeof styles.modifiers],
-          widthOn2Xl && styles.modifiers[`width_${widthOn2Xl}On_2xl` as keyof typeof styles.modifiers],
+          formatBreakpointMods(widths, styles),
           className
         )}
         hidden={isStatic ? false : !isExpanded}
