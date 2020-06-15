@@ -3,6 +3,68 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.13.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.13.7...@patternfly/react-integration@4.13.8) (2020-06-09)
+
+
+### Bug Fixes
+
+* **Drawer:** opening drawer can send focus to the drawer ([#4328](https://github.com/patternfly/patternfly-react/issues/4328)) ([fec328a](https://github.com/patternfly/patternfly-react/commit/fec328ab03bb1456e5eb685b5fe91b712c82ef5d))
+
+
+
+
+
+## [4.13.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.13.6...@patternfly/react-integration@4.13.7) (2020-06-09)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## [4.13.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.13.5...@patternfly/react-integration@4.13.6) (2020-06-09)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## [4.13.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.13.4...@patternfly/react-integration@4.13.5) (2020-06-08)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## [4.13.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.13.3...@patternfly/react-integration@4.13.4) (2020-06-08)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## [4.13.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.13.2...@patternfly/react-integration@4.13.3) (2020-06-08)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## [4.13.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.13.1...@patternfly/react-integration@4.13.2) (2020-06-05)
+
+
+### Bug Fixes
+
+* **ToolbarToggleGroup:** revert show to breakpoint ([#4343](https://github.com/patternfly/patternfly-react/issues/4343)) ([8c50170](https://github.com/patternfly/patternfly-react/commit/8c501709770b5e28e85f7db0bb64c3607d260c55))
+
+
+
+
+
 ## [4.13.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.13.0...@patternfly/react-integration@4.13.1) (2020-06-01)
 
 

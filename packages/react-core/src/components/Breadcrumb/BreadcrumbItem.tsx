@@ -12,10 +12,12 @@ export interface BreadcrumbItemProps extends React.HTMLProps<HTMLLIElement> {
   to?: string;
   /** Flag indicating whether the item is active. */
   isActive?: boolean;
+  /** Internal prop set by Breadcrumb on all but the first crumb */
+  showDivider?: boolean;
   /** Target for breadcrumb link. */
   target?: string;
   /** Sets the base component to render. Defaults to <a> */
-  component?: React.ReactNode;
+  component?: React.ElementType;
 }
 
 export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
@@ -23,13 +25,19 @@ export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
   className = '',
   to = null,
   isActive = false,
+  showDivider,
   target = null,
   component = 'a',
   ...props
 }: BreadcrumbItemProps) => {
-  const Component = component as any;
+  const Component = component;
   return (
     <li {...props} className={css(styles.breadcrumbItem, className)}>
+      {showDivider && (
+        <span className={styles.breadcrumbItemDivider}>
+          <AngleRightIcon />
+        </span>
+      )}
       {to && (
         <Component
           href={to}
@@ -41,11 +49,6 @@ export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
         </Component>
       )}
       {!to && <React.Fragment>{children}</React.Fragment>}
-      {!isActive && (
-        <span className={css(styles.breadcrumbItemDivider)}>
-          <AngleRightIcon />
-        </span>
-      )}
     </li>
   );
 };

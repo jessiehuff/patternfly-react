@@ -14,7 +14,8 @@ import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
 
 /**
- * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-tooltip/src/index.d.ts
  */
 export interface ChartTooltipProps extends VictoryTooltipProps {
   /**
@@ -218,7 +219,7 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
 
 export const ChartTooltip: React.FunctionComponent<ChartTooltipProps> = ({
   constrainToVisibleArea = false,
-  labelComponent = <ChartLabel />,
+  labelComponent = <ChartLabel />, // Note that Victory provides its own label component here
   labelTextAnchor,
   themeColor,
   themeVariant,
@@ -229,6 +230,7 @@ export const ChartTooltip: React.FunctionComponent<ChartTooltipProps> = ({
 }: ChartTooltipProps) => {
   const chartLabelComponent = React.cloneElement(labelComponent, {
     textAnchor: labelTextAnchor,
+    theme,
     ...labelComponent.props
   });
 

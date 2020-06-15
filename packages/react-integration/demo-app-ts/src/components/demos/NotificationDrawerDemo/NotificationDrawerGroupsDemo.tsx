@@ -337,7 +337,7 @@ export class GroupsNotificationDrawerDemo extends React.Component<
                     silenced critical alerts however.
                   </EmptyStateBody>
                   <EmptyStatePrimary>
-                    <Button variant="link">View all alerts</Button>
+                    <Button variant="link">Action</Button>
                   </EmptyStatePrimary>
                 </EmptyState>
               </NotificationDrawerList>

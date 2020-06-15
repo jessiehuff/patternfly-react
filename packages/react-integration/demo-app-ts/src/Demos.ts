@@ -166,11 +166,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DataListCompactDemo
   },
   {
-    id: 'toolbar-demo',
-    name: 'Toolbar Demo',
-    componentType: Examples.ToolbarDemo
-  },
-  {
     id: 'divider-demo',
     name: 'Divider Demo',
     componentType: Examples.DividerDemo
@@ -380,6 +375,11 @@ export const Demos: DemoInterface[] = [
     id: 'notification-badge-demo',
     name: 'Notification Badge Demo',
     componentType: Examples.NotificationBadgeDemo
+  },
+  {
+    id: 'notification-drawer-lightweight-demo',
+    name: 'Notification Drawer Lightweight Demo',
+    componentType: Examples.LightweightNotificationDrawerDemo
   },
   {
     id: 'notification-drawer-basic-demo',

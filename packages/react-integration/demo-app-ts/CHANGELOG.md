@@ -3,6 +3,108 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.13.14](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.13...demo-app-ts@4.13.14) (2020-06-11)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.13.13](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.12...demo-app-ts@4.13.13) (2020-06-11)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.13.12](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.11...demo-app-ts@4.13.12) (2020-06-09)
+
+
+### Bug Fixes
+
+* **Drawer:** opening drawer can send focus to the drawer ([#4328](https://github.com/patternfly/patternfly-react/issues/4328)) ([fec328a](https://github.com/patternfly/patternfly-react/commit/fec328ab03bb1456e5eb685b5fe91b712c82ef5d))
+
+
+
+
+
+## [4.13.11](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.10...demo-app-ts@4.13.11) (2020-06-09)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.13.10](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.9...demo-app-ts@4.13.10) (2020-06-09)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.13.9](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.8...demo-app-ts@4.13.9) (2020-06-08)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.13.8](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.7...demo-app-ts@4.13.8) (2020-06-08)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.13.7](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.6...demo-app-ts@4.13.7) (2020-06-08)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.13.6](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.5...demo-app-ts@4.13.6) (2020-06-08)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.13.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.4...demo-app-ts@4.13.5) (2020-06-05)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.13.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.3...demo-app-ts@4.13.4) (2020-06-05)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [4.13.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.2...demo-app-ts@4.13.3) (2020-06-05)
+
+
+### Bug Fixes
+
+* **ToolbarToggleGroup:** revert show to breakpoint ([#4343](https://github.com/patternfly/patternfly-react/issues/4343)) ([8c50170](https://github.com/patternfly/patternfly-react/commit/8c501709770b5e28e85f7db0bb64c3607d260c55))
+
+
+
+
+
 ## [4.13.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.13.1...demo-app-ts@4.13.2) (2020-06-03)
 
 **Note:** Version bump only for package demo-app-ts

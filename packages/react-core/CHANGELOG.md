@@ -3,6 +3,116 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.18.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.12...@patternfly/react-core@4.18.13) (2020-06-11)
+
+
+### Bug Fixes
+
+* **breadcrumb:** temp fix for spacing ([#4368](https://github.com/patternfly/patternfly-react/issues/4368)) ([7010497](https://github.com/patternfly/patternfly-react/commit/7010497c74efbd2dbf91629751dbf5d833c385ad))
+
+
+
+
+
+## [4.18.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.11...@patternfly/react-core@4.18.12) (2020-06-11)
+
+
+### Bug Fixes
+
+* **NavExpandable:** add style.modifiers.expandable ([#4362](https://github.com/patternfly/patternfly-react/issues/4362)) ([eb5bc98](https://github.com/patternfly/patternfly-react/commit/eb5bc98f38e250e824e959c9619ee33b0c6210b2))
+
+
+
+
+
+## [4.18.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.10...@patternfly/react-core@4.18.11) (2020-06-09)
+
+
+### Bug Fixes
+
+* **Drawer:** opening drawer can send focus to the drawer ([#4328](https://github.com/patternfly/patternfly-react/issues/4328)) ([fec328a](https://github.com/patternfly/patternfly-react/commit/fec328ab03bb1456e5eb685b5fe91b712c82ef5d))
+
+
+
+
+
+## [4.18.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.9...@patternfly/react-core@4.18.10) (2020-06-09)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.18.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.8...@patternfly/react-core@4.18.9) (2020-06-09)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.18.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.7...@patternfly/react-core@4.18.8) (2020-06-08)
+
+
+### Bug Fixes
+
+* **OverflowMenu:** fix accessibility issue on KebabToggle button ([#4353](https://github.com/patternfly/patternfly-react/issues/4353)) ([3df7370](https://github.com/patternfly/patternfly-react/commit/3df73703cb7b380da5542aed505dcca5c28abf59))
+
+
+
+
+
+## [4.18.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.6...@patternfly/react-core@4.18.7) (2020-06-08)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.18.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.5...@patternfly/react-core@4.18.6) (2020-06-08)
+
+
+### Bug Fixes
+
+* **Select:** fix filter clear button accessibility issue ([#4331](https://github.com/patternfly/patternfly-react/issues/4331)) ([d398f3e](https://github.com/patternfly/patternfly-react/commit/d398f3ec1fd1ebcf0fd74cc2816f1a1402d0d5d5))
+* **Select:** fix panel issue ([#4340](https://github.com/patternfly/patternfly-react/issues/4340)) ([0e9c43b](https://github.com/patternfly/patternfly-react/commit/0e9c43b9c98f3afa7f58594abe717a862c8189d2))
+
+
+
+
+
+## [4.18.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.4...@patternfly/react-core@4.18.5) (2020-06-05)
+
+
+### Bug Fixes
+
+* **docs:** add upgrade guide ([#4298](https://github.com/patternfly/patternfly-react/issues/4298)) ([4ee8805](https://github.com/patternfly/patternfly-react/commit/4ee8805ab9b232ebbe280313d4ae3e53bd78fb70))
+
+
+
+
+
+## [4.18.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.3...@patternfly/react-core@4.18.4) (2020-06-05)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.18.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.2...@patternfly/react-core@4.18.3) (2020-06-05)
+
+
+### Bug Fixes
+
+* **ToolbarToggleGroup:** revert show to breakpoint ([#4343](https://github.com/patternfly/patternfly-react/issues/4343)) ([8c50170](https://github.com/patternfly/patternfly-react/commit/8c501709770b5e28e85f7db0bb64c3607d260c55))
+
+
+
+
+
 ## [4.18.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.18.1...@patternfly/react-core@4.18.2) (2020-06-03)
 
 **Note:** Version bump only for package @patternfly/react-core

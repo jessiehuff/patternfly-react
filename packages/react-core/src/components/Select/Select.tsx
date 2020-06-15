@@ -102,6 +102,7 @@ export interface SelectState {
 export class Select extends React.Component<SelectProps & OUIAProps, SelectState> {
   private parentRef = React.createRef<HTMLDivElement>();
   private filterRef = React.createRef<HTMLInputElement>();
+  private clearRef = React.createRef<HTMLButtonElement>();
   private refCollection: HTMLElement[] = [];
 
   static defaultProps: PickOptional<SelectProps> = {
@@ -150,7 +151,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       this.refCollection[0] = this.filterRef.current;
     }
 
-    if (!prevState.openedOnEnter && this.state.openedOnEnter) {
+    if (!prevState.openedOnEnter && this.state.openedOnEnter && !this.props.customContent) {
       this.refCollection[0].focus();
     }
 
@@ -422,6 +423,12 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         aria-label={clearSelectionsAriaLabel}
         type="button"
         disabled={isDisabled}
+        ref={this.clearRef}
+        onKeyDown={event => {
+          if (event.key === KeyTypes.Enter) {
+            this.clearRef.current.click();
+          }
+        }}
       >
         <TimesCircleIcon aria-hidden />
       </button>

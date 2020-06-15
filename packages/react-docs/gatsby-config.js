@@ -13,6 +13,7 @@ module.exports = {
         context: 'react', // For global items that need sideNav
         showGdprBanner: false, // GDPR banner
         hiddenPages: ['Training'], // By title
+        showFooter: false,
         sideNav: {
           react: [
             { section: 'overview' },
@@ -44,17 +45,18 @@ module.exports = {
         /* Files we never care to pull data from
          * Matched by https://github.com/paulmillr/chokidar */
         ignore: [
-          '**/dist',
-          '**/helpers',
-          '**/scripts',
-          '**/styles',
-          '**/build',
-          '**/utils',
-          '**/public',
+          /.*dist.*/,
+          /.*helpers.*/,
+          /.*scripts.*/,
+          /.*styles.*/,
+          /.*build.*/,
+          /.*utils.*/,
+          /.*public.*/,
           '**/test-helpers',
           /.*react-styles.*/,
           /.*react-docs.*/,
           /.*react-integration.*/,
+          /.*eslint-plugin-patternfly-react.*/,
           '**/\\..*', // dotfiles
           '**/*.d.ts',
           '**/*.test.*',
@@ -72,6 +74,13 @@ module.exports = {
       options: {
         name: 'react', // This goes in URLs
         path: path.resolve(__dirname, './RELEASE-NOTES.md')
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'react', // This goes in URLs
+        path: path.resolve(__dirname, './UPGRADE-GUIDE.md')
       }
     },
     // Source training
