@@ -19,6 +19,16 @@ module.exports = on => {
     // eslint-disable-next-line global-require
     webpackOptions: require('../../webpack.config')
   };
+  on('task', {
+    log(message) {
+      console.log("foo", message)
+      return null
+    },
+    table(message) {
+      console.table(message)
 
+      return null
+    },
+  })
   on('file:preprocessor', webpack(options));
 };
