@@ -101,19 +101,19 @@ class PageLayoutDefaultNav extends React.Component {
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
         <NavList>
-          <NavItem itemId={0} isActive={activeItem === 0}>
+          <NavItem itemId={0} href="#" isActive={activeItem === 0}>
             System Panel
           </NavItem>
-          <NavItem itemId={1} isActive={activeItem === 1}>
+          <NavItem itemId={1} href="#" isActive={activeItem === 1}>
             Policy
           </NavItem>
-          <NavItem itemId={2} isActive={activeItem === 2}>
+          <NavItem itemId={2} href="#" isActive={activeItem === 2}>
             Authentication
           </NavItem>
-          <NavItem itemId={3} isActive={activeItem === 3}>
+          <NavItem itemId={3} href="#" isActive={activeItem === 3}>
             Network Services
           </NavItem>
-          <NavItem itemId={4} isActive={activeItem === 4}>
+          <NavItem itemId={4} href="#" isActive={activeItem === 4}>
             Server
           </NavItem>
         </NavList>
@@ -325,33 +325,33 @@ class PageLayoutGroupsNav extends React.Component {
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
         <NavGroup title="System Panel">
-          <NavItem itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'}>
+          <NavItem itemId="grp-1_itm-1" href="#" isActive={activeItem === 'grp-1_itm-1'}>
             Overview
           </NavItem>
-          <NavItem itemId="grp-1_itm-2" isActive={activeItem === 'grp-1_itm-2'}>
+          <NavItem itemId="grp-1_itm-2" href="#" isActive={activeItem === 'grp-1_itm-2'}>
             Resource Usage
           </NavItem>
-          <NavItem itemId="grp-1_itm-3" isActive={activeItem === 'grp-1_itm-3'}>
+          <NavItem itemId="grp-1_itm-3" href="#" isActive={activeItem === 'grp-1_itm-3'}>
             Hypervisors
           </NavItem>
-          <NavItem itemId="grp-1_itm-4" isActive={activeItem === 'grp-1_itm-4'}>
+          <NavItem itemId="grp-1_itm-4" href="#" isActive={activeItem === 'grp-1_itm-4'}>
             Instances
           </NavItem>
-          <NavItem itemId="grp-1_itm-5" isActive={activeItem === 'grp-1_itm-5'}>
+          <NavItem itemId="grp-1_itm-5" href="#" isActive={activeItem === 'grp-1_itm-5'}>
             Volumes
           </NavItem>
-          <NavItem itemId="grp-1_itm-6" isActive={activeItem === 'grp-1_itm-6'}>
+          <NavItem itemId="grp-1_itm-6" href="#" isActive={activeItem === 'grp-1_itm-6'}>
             Network
           </NavItem>
         </NavGroup>
         <NavGroup title="Policy">
-          <NavItem itemId="grp-2_itm-1" isActive={activeItem === 'grp-2_itm-1'}>
+          <NavItem itemId="grp-2_itm-1" href="#" isActive={activeItem === 'grp-2_itm-1'}>
             Hosts
           </NavItem>
-          <NavItem itemId="grp-2_itm-2" isActive={activeItem === 'grp-2_itm-2'}>
+          <NavItem itemId="grp-2_itm-2" href="#" isActive={activeItem === 'grp-2_itm-2'}>
             Virtual Machines
           </NavItem>
-          <NavItem itemId="grp-2_itm-3" isActive={activeItem === 'grp-2_itm-3'}>
+          <NavItem itemId="grp-2_itm-3" href="#" isActive={activeItem === 'grp-2_itm-3'}>
             Storage
           </NavItem>
         </NavGroup>
@@ -555,38 +555,38 @@ class PageLayoutExpandableNav extends React.Component {
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
         <NavList>
           <NavExpandable title="System Panel" groupId="grp-1" isActive={activeGroup === 'grp-1'} isExpanded>
-            <NavItem groupId="grp-1" itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'}>
+            <NavItem groupId="grp-1" href="#" itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'}>
               Overview
             </NavItem>
-            <NavItem groupId="grp-1" itemId="grp-1_itm-2" isActive={activeItem === 'grp-1_itm-2'}>
+            <NavItem groupId="grp-1" href="#" itemId="grp-1_itm-2" isActive={activeItem === 'grp-1_itm-2'}>
               Resource usage
             </NavItem>
-            <NavItem groupId="grp-1" itemId="grp-1_itm-3" isActive={activeItem === 'grp-1_itm-3'}>
+            <NavItem groupId="grp-1" href="#" itemId="grp-1_itm-3" isActive={activeItem === 'grp-1_itm-3'}>
               Hypervisors
             </NavItem>
-            <NavItem groupId="grp-1" itemId="grp-1_itm-4" isActive={activeItem === 'grp-1_itm-4'}>
+            <NavItem groupId="grp-1" href="#" itemId="grp-1_itm-4" isActive={activeItem === 'grp-1_itm-4'}>
               Instances
             </NavItem>
-            <NavItem groupId="grp-1" itemId="grp-1_itm-5" isActive={activeItem === 'grp-1_itm-5'}>
+            <NavItem groupId="grp-1" href="#" itemId="grp-1_itm-5" isActive={activeItem === 'grp-1_itm-5'}>
               Volumes
             </NavItem>
-            <NavItem groupId="grp-1" itemId="grp-1_itm-6" isActive={activeItem === 'grp-1_itm-6'}>
+            <NavItem groupId="grp-1" href="#" itemId="grp-1_itm-6" isActive={activeItem === 'grp-1_itm-6'}>
               Network
             </NavItem>
           </NavExpandable>
           <NavExpandable title="Policy" groupId="grp-2" isActive={activeGroup === 'grp-2'}>
-            <NavItem groupId="grp-2" itemId="grp-2_itm-1" isActive={activeItem === 'grp-2_itm-1'}>
+            <NavItem groupId="grp-2" href="#" itemId="grp-2_itm-1" isActive={activeItem === 'grp-2_itm-1'}>
               Subnav link 1
             </NavItem>
-            <NavItem groupId="grp-2" itemId="grp-2_itm-2" isActive={activeItem === 'grp-2_itm-2'}>
+            <NavItem groupId="grp-2" href="#" itemId="grp-2_itm-2" isActive={activeItem === 'grp-2_itm-2'}>
               Subnav link 2
             </NavItem>
           </NavExpandable>
           <NavExpandable title="Authentication" groupId="grp-3" isActive={activeGroup === 'grp-3'}>
-            <NavItem groupId="grp-3" itemId="grp-3_itm-1" isActive={activeItem === 'grp-3_itm-1'}>
+            <NavItem groupId="grp-3" href="#" itemId="grp-3_itm-1" isActive={activeItem === 'grp-3_itm-1'}>
               Subnav link 1
             </NavItem>
-            <NavItem groupId="grp-3" itemId="grp-3_itm-2" isActive={activeItem === 'grp-3_itm-2'}>
+            <NavItem groupId="grp-3" href="#" itemId="grp-3_itm-2" isActive={activeItem === 'grp-3_itm-2'}>
               Subnav link 2
             </NavItem>
           </NavExpandable>
@@ -803,19 +803,19 @@ class PageLayoutHorizontalNav extends React.Component {
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav" variant="horizontal">
         <NavList>
-          <NavItem itemId={0} isActive={activeItem === 0}>
+          <NavItem itemId={0} href="#" isActive={activeItem === 0}>
             System Panel
           </NavItem>
-          <NavItem itemId={1} isActive={activeItem === 1}>
+          <NavItem itemId={1} href="#" isActive={activeItem === 1}>
             Policy
           </NavItem>
-          <NavItem itemId={2} isActive={activeItem === 2}>
+          <NavItem itemId={2} href="#" isActive={activeItem === 2}>
             Authentication
           </NavItem>
-          <NavItem itemId={3} isActive={activeItem === 3}>
+          <NavItem itemId={3} href="#" isActive={activeItem === 3}>
             Network Services
           </NavItem>
-          <NavItem itemId={4} isActive={activeItem === 4}>
+          <NavItem itemId={4} href="#" isActive={activeItem === 4}>
             Server
           </NavItem>
         </NavList>
@@ -1024,19 +1024,19 @@ class PageLayoutTertiaryNav extends React.Component {
     const PageNav = (
       <Nav variant="tertiary" onSelect={this.onNavSelect} aria-label="Nav">
         <NavList>
-          <NavItem itemId={0} isActive={activeItem === 0}>
+          <NavItem itemId={0} href="#" isActive={activeItem === 0}>
             System Panel
           </NavItem>
-          <NavItem itemId={1} isActive={activeItem === 1}>
+          <NavItem itemId={1} href="#" isActive={activeItem === 1}>
             Policy
           </NavItem>
-          <NavItem itemId={2} isActive={activeItem === 2}>
+          <NavItem itemId={2} href="#" isActive={activeItem === 2}>
             Authentication
           </NavItem>
-          <NavItem itemId={3} isActive={activeItem === 3}>
+          <NavItem itemId={3} href="#"isActive={activeItem === 3}>
             Network Services
           </NavItem>
-          <NavItem itemId={4} isActive={activeItem === 4}>
+          <NavItem itemId={4} href="#" isActive={activeItem === 4}>
             Server
           </NavItem>
         </NavList>
@@ -1252,19 +1252,19 @@ class PageLayoutLightNav extends React.Component {
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav" theme="light">
         <NavList>
-          <NavItem itemId={0} isActive={activeItem === 0}>
+          <NavItem itemId={0} href="#" isActive={activeItem === 0}>
             System Panel
           </NavItem>
-          <NavItem itemId={1} isActive={activeItem === 1}>
+          <NavItem itemId={1} href="#" isActive={activeItem === 1}>
             Policy
           </NavItem>
-          <NavItem itemId={2} isActive={activeItem === 2}>
+          <NavItem itemId={2} href="#" isActive={activeItem === 2}>
             Authentication
           </NavItem>
-          <NavItem itemId={3} isActive={activeItem === 3}>
+          <NavItem itemId={3} href="#" isActive={activeItem === 3}>
             Network Services
           </NavItem>
-          <NavItem itemId={4} isActive={activeItem === 4}>
+          <NavItem itemId={4} href="#" isActive={activeItem === 4}>
             Server
           </NavItem>
         </NavList>
@@ -1495,19 +1495,19 @@ class PageLayoutManualNav extends React.Component {
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
         <NavList>
-          <NavItem itemId={0} isActive={activeItem === 0}>
+          <NavItem itemId={0} href="#" isActive={activeItem === 0}>
             System Panel
           </NavItem>
-          <NavItem itemId={1} isActive={activeItem === 1}>
+          <NavItem itemId={1} href="#" isActive={activeItem === 1}>
             Policy
           </NavItem>
-          <NavItem itemId={2} isActive={activeItem === 2}>
+          <NavItem itemId={2} href="#" isActive={activeItem === 2}>
             Authentication
           </NavItem>
-          <NavItem itemId={3} isActive={activeItem === 3}>
+          <NavItem itemId={3} href="#" isActive={activeItem === 3}>
             Network Services
           </NavItem>
-          <NavItem itemId={4} isActive={activeItem === 4}>
+          <NavItem itemId={4} href="#" isActive={activeItem === 4}>
             Server
           </NavItem>
         </NavList>
