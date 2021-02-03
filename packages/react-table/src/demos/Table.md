@@ -126,7 +126,6 @@ class BulkSelectTableDemo extends React.Component {
         return { isDropDownOpen: !prevState.isDropDownOpen };
       });
     };
-
   }
 
   fetch(page, perPage) {
@@ -830,6 +829,15 @@ class ColumnManagementAction extends React.Component {
         [target.name]: value
       });
     };
+    this.handleRowChange = (event) => {
+      const target = event.target;
+      const rowId = event.currentTarget.id;
+      const value = !this.state[rowId];
+      this.filterData(value, this.matchCheckboxNameToColumn(rowId));
+      this.setState({
+        [rowId]: value
+      });
+    };
     this.handleModalToggle = () => {
       this.setState(({ isModalOpen }) => ({
         isModalOpen: !isModalOpen
@@ -853,7 +861,6 @@ class ColumnManagementAction extends React.Component {
       });
     };
   }
-
   onSelect(event, isSelected, rowId) {
     let rows;
     if (rowId === -1) {
@@ -878,6 +885,7 @@ class ColumnManagementAction extends React.Component {
 
   renderModal() {
     const { isModalOpen } = this.state;
+    console.log('state: ', this.state);
     return (
       <Modal
         title="Manage columns"
@@ -902,11 +910,15 @@ class ColumnManagementAction extends React.Component {
         ]}
       >
         <DataList aria-label="Table column management" id="table-column-management" isCompact>
-          <DataListItem aria-labelledby="table-column-management-item1">
+          <DataListItem
+            aria-labelledby="table-column-management-item1"
+            id="check1"
+            key="check1"
+            onClick={this.handleRowChange}>
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item1"
-                isChecked={this.state.check1}
+                checked={this.state.check1}
                 name="check1"
                 onChange={this.handleChange}
               />
@@ -919,11 +931,15 @@ class ColumnManagementAction extends React.Component {
               />
             </DataListItemRow>
           </DataListItem>
-          <DataListItem aria-labelledby="table-column-management-item2">
+          <DataListItem 
+              aria-labelledby="table-column-management-item2"
+              id="check2"
+              key="check2"
+              onClick={this.handleRowChange}>
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item2"
-                isChecked={this.state.check2}
+                checked={this.state.check2}
                 name="check2"
                 onChange={this.handleChange}
               />
@@ -940,7 +956,7 @@ class ColumnManagementAction extends React.Component {
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item3"
-                isChecked={this.state.check3}
+                checked={this.state.check3}
                 name="check3"
                 onChange={this.handleChange}
               />
@@ -957,7 +973,7 @@ class ColumnManagementAction extends React.Component {
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item4"
-                isChecked={this.state.check4}
+                checked={this.state.check4}
                 name="check4"
                 onChange={this.handleChange}
               />
@@ -974,7 +990,7 @@ class ColumnManagementAction extends React.Component {
             <DataListItemRow>
               <DataListCheck
                 aria-labelledby="table-column-management-item5"
-                isChecked={this.state.check5}
+                checked={this.state.check5}
                 name="check5"
                 onChange={this.handleChange}
               />
@@ -1409,13 +1425,21 @@ class FilterTableDemo extends React.Component {
           })
         : rows;
 
-    let tableRows = filteredRows;
-    if (!loading && filteredRows.length === 0) {
-      tableRows = [{
-        heightAuto: true,
-        cells: [{
-          props: { colSpan: 8 },
-          title: (
+    return (
+      <React.Fragment>
+        {this.renderToolbar()}
+        {!loading && filteredRows.length > 0 && (
+          <Table cells={columns} rows={filteredRows} onSelect={this.onRowSelect} aria-label="Filterable Table Demo">
+            <TableHeader />
+            <TableBody />
+          </Table>
+        )}
+        {!loading && filteredRows.length === 0 && (
+          <React.Fragment>
+            <Table cells={columns} rows={filteredRows} onSelect={this.onRowSelect} aria-label="Filterable Table Demo">
+              <TableHeader />
+              <TableBody />
+            </Table>
             <Bullseye>
               <EmptyState>
                 <EmptyStateIcon icon={SearchIcon} />
@@ -1426,36 +1450,21 @@ class FilterTableDemo extends React.Component {
                   No results match this filter criteria. Remove all filters or clear all filters to show results.
                 </EmptyStateBody>
                 <EmptyStateSecondaryActions>
-                  <Button variant="link" onClick={() => { this.onDelete(null); }}>
+                  <Button variant="link" onClick={() => this.onDelete(null)}>
                     Clear all filters
                   </Button>
                 </EmptyStateSecondaryActions>
               </EmptyState>
             </Bullseye>
-          )
-        }]
-      }]
-    } else if (loading) {
-      tableRows = [{
-        heightAuto: true,
-        cells: [{
-          props: { colSpan: 8 },
-          title: (
+          </React.Fragment>
+        )}
+        {loading && (
+          <center>
             <Title headingLevel="h2" size="3xl">
               Please wait while loading data
             </Title>
-          )
-        }]
-      }]
-    }
-
-    return (
-      <React.Fragment>
-        {this.renderToolbar()}
-        <Table cells={columns} rows={tableRows} onSelect={this.onRowSelect} aria-label="Filterable Table Demo">
-          <TableHeader />
-          <TableBody />
-        </Table>
+          </center>
+        )}
       </React.Fragment>
     );
   }
@@ -2004,34 +2013,29 @@ class EmptyStateDemo extends React.Component {
       { title: 'Location' }
     ];
 
-    const rows = [{
-      heightAuto: true,
-      cells: [{
-        props: { colSpan: 8 },
-        title: (
-          <EmptyState>
-            <EmptyStateIcon icon={SearchIcon} />
-            <Title headingLevel="h5" size="lg">
-              No results found
-            </Title>
-            <EmptyStateBody>
-              No results match this filter criteria. Remove all filters or clear all filters to show results.
-            </EmptyStateBody>
-            <EmptyStateSecondaryActions>
-              <Button variant="link" onClick={() => {}}>
-                Clear all filters
-              </Button>
-            </EmptyStateSecondaryActions>
-          </EmptyState>
-        )
-      }]
-    }];
+    const rows = [];
 
     return (
-      <Table cells={columns} rows={rows} aria-label="Empty state demo">
-        <TableHeader />
-        <TableBody />
-      </Table>
+      <React.Fragment>
+        <Table cells={columns} rows={rows} aria-label="Empty state demo">
+          <TableHeader />
+          <TableBody />
+        </Table>
+        <EmptyState>
+          <EmptyStateIcon icon={SearchIcon} />
+          <Title headingLevel="h5" size="lg">
+            No results found
+          </Title>
+          <EmptyStateBody>
+            No results match this filter criteria. Remove all filters or clear all filters to show results.
+          </EmptyStateBody>
+          <EmptyStateSecondaryActions>
+            <Button variant="link" onClick={() => {}}>
+              Clear all filters
+            </Button>
+          </EmptyStateSecondaryActions>
+        </EmptyState>
+      </React.Fragment>
     );
   }
 }
@@ -2061,9 +2065,9 @@ class LoadingStateDemo extends React.Component {
           {
             props: { colSpan: 8 },
             title: (
-              <Bullseye>
+              <center>
                 <Spinner size="xl" />
-              </Bullseye>
+              </center>
             )
           }
         ]
